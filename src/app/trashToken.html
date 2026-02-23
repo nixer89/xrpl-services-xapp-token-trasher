@@ -37,7 +37,7 @@
 
         <mat-card class="stepcontainer" fxLayout="column" fxLayoutGap="0.5em" style="margin-left: 0.5em; margin-right: 0.5em;">
 
-          <mat-card fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="0.5em">
+          <!--mat-card fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="0.5em">
             <div fxLayout="row" style="width: 100%">
               <div fxLayout="row" fxLayoutGap="0.5em" fxLayoutAlign="start center" style="width: 80%">
                 <mat-checkbox [(ngModel)]="checkBoxSkipDialogs" [ngClass]="(checkBoxSkipDialogs ? 'xumm-green': 'xumm-orange')" [disabled]="!isXummProUser">Skip Dialogs</mat-checkbox>
@@ -55,7 +55,7 @@
               <label>This speeds up the removal process for tokens drastically.</label>
               <label>Please double check ALL sign requests!</label>
             </mat-card>
-          </mat-card>
+          </mat-card-->
 
           <h2>Select a Token to get rid of:</h2>
             <div *ngIf="simpleTrustlines" fxLayout="column" fxLayoutGap="0.3em">
