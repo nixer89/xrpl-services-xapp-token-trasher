@@ -8,6 +8,10 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
+  <mat-toolbar *ngIf="!loadingBackend && !backendAvailable" class="warning-background" fxLayout="row" fxLayoutAlign="center center" ngStyle.xs="font-size: 0.9em; white-space: pre-wrap;">
+    <label>Maintenance currently ongoing. We are back soon! Thank you for your understanding!</label>
+  </mat-toolbar>
+
   <mat-card class="mat-card-red" *ngIf="errorLabel" fxLayout="column" fxLayoutGap="0.5em">
     <label>Sorry that this error happened! Please copy the following error and send it to @XrplServices on twitter or via mail to: info@xrpl.services . Thanks for your help!</label>
     <label>&nbsp;</label>
@@ -32,7 +36,7 @@
   <label *ngIf="infoLabel2" style="color: red">{{infoLabel2}}</label>
   <label *ngIf="infoLabel3" style="color: red">{{infoLabel3}}</label-->
 
-  <mat-stepper orientation="horizontal" [linear]="isLinear" #stepper class="theme-background" *ngIf="xrplAccountInfo && xrplAccountInfo.Account">
+  <mat-stepper orientation="horizontal" [linear]="isLinear" #stepper class="theme-background" *ngIf="xrplAccountInfo && xrplAccountInfo.Account && !loadingBackend && backendAvailable">
     <mat-step completed="false" editable="false">
 
         <mat-card class="stepcontainer" fxLayout="column" fxLayoutGap="0.5em" style="margin-left: 0.5em; margin-right: 0.5em;">

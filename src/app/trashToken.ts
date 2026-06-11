@@ -128,11 +128,18 @@ export class TrashToken implements OnInit, OnDestroy {
   title: string = "XRPL Services xApp";
   tw: TypeWriter
 
+  loadingBackend:boolean = true;
+  backendAvailable:boolean = false;
+
   @ViewChild('stepper') stepper: MatStepper;
 
   async ngOnInit(): Promise<void> {
 
     this.loadingData = true;
+
+    this.loadingBackend = true;
+    this.backendAvailable = await this.xummApi.ping();
+    this.loadingBackend = false;
 
     this.liquidityChecker = CheckLiquidity.Instance;
 
